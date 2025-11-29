@@ -1,18 +1,10 @@
 package com.linxux001.chatbotapiinterfaces;
 
+import com.linxux001.chatbotapidomain.ai.IOpenAI;
 import com.linxux001.chatbotapidomain.zsxq.model.aggregates.UnAnsweredQuestionsAggregates;
 import com.linxux001.chatbotapidomain.zsxq.model.vo.Topics;
 import com.linxux001.chatbotapidomain.zsxq.IZsxqApi;
 import com.alibaba.fastjson.JSON;
-import org.apache.http.HttpStatus;
-import org.apache.http.client.methods.CloseableHttpResponse;
-import org.apache.http.client.methods.HttpGet;
-import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ContentType;
-import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.CloseableHttpClient;
-import org.apache.http.impl.client.HttpClientBuilder;
-import org.apache.http.util.EntityUtils;
 import org.junit.jupiter.api.Test;
 import org.junit.runner.RunWith;
 import org.slf4j.Logger;
@@ -39,8 +31,14 @@ class ChatbotApiInterfacesApplicationTests {
     @Value("${chatbot-api.cookie}")
     private String cookie;
     
+    @Value("${chatbot-api.openAiKey}")
+    private String openAiKey;
+    
     @Resource
     private IZsxqApi zsxqApi;
+    
+    @Resource
+    private IOpenAI openAI;
     
     @Test
     public void test_zsxqApi()throws IOException{
@@ -57,6 +55,11 @@ class ChatbotApiInterfacesApplicationTests {
         }
     }
     
-    
+    @Test
+    public void test_openAI()throws IOException{
+        String question="你好，你是谁？";
+        String answer=openAI.doChatGPT(openAiKey,question);
+        log.info("answer:{}",answer);
+    }
     
 }
