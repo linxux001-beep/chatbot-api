@@ -17,7 +17,7 @@ import javax.annotation.Resource;
 import java.io.IOException;
 import java.util.List;
 
-@RunWith(SpringRunner.class)
+//@RunWith(SpringRunner.class)
 @SpringBootTest
 class ChatbotApiInterfacesApplicationTests {
 

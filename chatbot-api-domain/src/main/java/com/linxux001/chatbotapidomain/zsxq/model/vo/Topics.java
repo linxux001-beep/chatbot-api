@@ -1,11 +1,6 @@
 package com.linxux001.chatbotapidomain.zsxq.model.vo;
 
-/**
- * @author 小傅哥，微信：fustack
- * @description
- * @github https://github.com/fuzhengwei
- * @copyright 公众号：bugstack虫洞栈 | 博客：https://bugstack.cn - 沉淀、分享、成长，让自己和他人都能有所收获！
- */
+
 public class Topics {
 
     private String topic_id;
@@ -13,6 +8,8 @@ public class Topics {
     private Group group;
 
     private String type;
+
+    private Talk talk;
 
     private Question question;
 
@@ -36,89 +33,123 @@ public class Topics {
 
     private UserSpecific user_specific;
 
-    public void setTopic_id(String topic_id){
+    public void setTopic_id(String topic_id) {
         this.topic_id = topic_id;
     }
-    public String getTopic_id(){
+
+    public String getTopic_id() {
         return this.topic_id;
     }
-    public void setGroup(Group group){
+
+    public void setGroup(Group group) {
         this.group = group;
     }
-    public Group getGroup(){
+
+    public Group getGroup() {
         return this.group;
     }
-    public void setType(String type){
+
+    public void setType(String type) {
         this.type = type;
     }
-    public String getType(){
+
+    public String getType() {
         return this.type;
     }
-    public void setQuestion(Question question){
+
+    public void setQuestion(Question question) {
         this.question = question;
     }
-    public Question getQuestion(){
+
+    public Question getQuestion() {
         return this.question;
     }
-    public void setAnswered(boolean answered){
+
+    public void setAnswered(boolean answered) {
         this.answered = answered;
     }
-    public boolean getAnswered(){
+
+    public boolean getAnswered() {
         return this.answered;
     }
-    public void setLikes_count(int likes_count){
+
+    public void setLikes_count(int likes_count) {
         this.likes_count = likes_count;
     }
-    public int getLikes_count(){
+
+    public int getLikes_count() {
         return this.likes_count;
     }
-    public void setRewards_count(int rewards_count){
+
+    public void setRewards_count(int rewards_count) {
         this.rewards_count = rewards_count;
     }
-    public int getRewards_count(){
+
+    public int getRewards_count() {
         return this.rewards_count;
     }
-    public void setComments_count(int comments_count){
+
+    public void setComments_count(int comments_count) {
         this.comments_count = comments_count;
     }
-    public int getComments_count(){
+
+    public int getComments_count() {
         return this.comments_count;
     }
-    public void setReading_count(int reading_count){
+
+    public void setReading_count(int reading_count) {
         this.reading_count = reading_count;
     }
-    public int getReading_count(){
+
+    public int getReading_count() {
         return this.reading_count;
     }
-    public void setReaders_count(int readers_count){
+
+    public void setReaders_count(int readers_count) {
         this.readers_count = readers_count;
     }
-    public int getReaders_count(){
+
+    public int getReaders_count() {
         return this.readers_count;
     }
-    public void setDigested(boolean digested){
+
+    public void setDigested(boolean digested) {
         this.digested = digested;
     }
-    public boolean getDigested(){
+
+    public boolean getDigested() {
         return this.digested;
     }
-    public void setSticky(boolean sticky){
+
+    public void setSticky(boolean sticky) {
         this.sticky = sticky;
     }
-    public boolean getSticky(){
+
+    public boolean getSticky() {
         return this.sticky;
     }
-    public void setCreate_time(String create_time){
+
+    public void setCreate_time(String create_time) {
         this.create_time = create_time;
     }
-    public String getCreate_time(){
+
+    public String getCreate_time() {
         return this.create_time;
     }
-    public void setUser_specific(UserSpecific user_specific){
+
+    public void setUser_specific(UserSpecific user_specific) {
         this.user_specific = user_specific;
     }
-    public UserSpecific getUser_specific(){
+
+    public UserSpecific getUser_specific() {
         return this.user_specific;
     }
 
+    public Talk getTalk() {
+        return talk;
+    }
+
+    public void setTalk(Talk talk) {
+        this.talk = talk;
+    }
 }

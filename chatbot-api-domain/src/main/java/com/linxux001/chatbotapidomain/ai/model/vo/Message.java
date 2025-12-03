@@ -1,13 +1,9 @@
-/**
-  * Copyright 2025 bejson.com 
-  */
 package com.linxux001.chatbotapidomain.ai.model.vo;
 
 /**
  * Auto-generated: 2025-11-29 11:19:41
  *
- * @author bejson.com (i@bejson.com)
- * @website http://www.bejson.com/java2pojo/
+
  */
 public class Message {
 

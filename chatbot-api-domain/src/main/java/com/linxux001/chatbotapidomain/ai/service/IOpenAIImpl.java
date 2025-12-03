@@ -26,18 +26,18 @@ public class IOpenAIImpl implements IOpenAI {
     private Logger logger= LoggerFactory.getLogger(IOpenAIImpl.class);
     
     @Override
-    public String doChatGPT(String openAiKey,String question) throws IOException {
+    public String doChatGPT(String openAiKey,String text) throws IOException {
 
         CloseableHttpClient httpClient= HttpClientBuilder.create().build();
 
         HttpPost httpPost = new HttpPost("https://api.deepseek.com/v1/chat/completions");
         httpPost.addHeader("Content-Type","application/json");
-        httpPost.addHeader("Authorization","Bearer "+openAiKey);
+        httpPost.addHeader("Authorization","Bearer sk-8ede83df9ce049bd94df97f36d78b262");
 
         String paramJson = "{\"model\": \"deepseek-chat\",\n" +
                 "        \"messages\": [\n" +
                 "          {\"role\": \"system\", \"content\": \"You are a helpful assistant.\"},\n" +
-                "          {\"role\": \"user\", \"content\": \""+question+"\"}\n" +
+                "          {\"role\": \"user\", \"content\": \""+text+"\"}\n" +
                 "        ],\n" +
                 "        \"stream\": false }";
 
@@ -47,11 +47,9 @@ public class IOpenAIImpl implements IOpenAI {
 
         if (httpResponse.getStatusLine().getStatusCode() == HttpStatus.SC_OK) {
             String jsonStr = EntityUtils.toString(httpResponse.getEntity());
-            AIAnswer aiAnswer = JSON.parseObject(jsonStr,AIAnswer.class);
-            
-            StringBuilder answers=new StringBuilder();
-            List<Choices> choices=aiAnswer.getChoices();
-            
+            AIAnswer aiAnswer = JSON.parseObject(jsonStr, AIAnswer.class);
+            StringBuilder answers = new StringBuilder();
+            List<Choices> choices = aiAnswer.getChoices();
             for (Choices choice : choices) {
                 answers.append(choice.getMessage().getContent());
             }
